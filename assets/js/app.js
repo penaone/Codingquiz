@@ -1,59 +1,96 @@
-var timer = 60
-var timerEl = document.getElementById("time")
-var time = 100
-var timerId 
-var quizAnswer
-var gameOver = "Game Over"
+var start = document.getElementById("start");
+var quiz = document.getElementById("quiz");
+var question = document.getElementById("question");
+var choiceA = document.getElementById("A");
+var choiceB = document.getElementById("B");
+var choiceC = document.getElementById("C");
+var choiceD = document.getElementById("D");
+var counter = document.getElementById("counter");
+var timeGauge = document.getElementById("timeGauge");
+var progress = document.getElementById("progress");
+var scoreDiv = document.getElementById("scoreContainer");
 
 
+
+    // create our questions
 var quizQuestions = [
     {
+        question : "Which of the following is true about variable naming conventions in JavaScript?",
+        answerA : "You should not use any of the JavaScript reserved keywords as a variable name",
+        answerB : "JavaScript variable names should not start with a number(0-9).",
+        answerC : "Both of the above",
+        answerD : "None of the above",
+        correct : "C"
+    },{
+        question : "What language is used to design and give life to your webpage?",
+        answerA : "Computer Source Systems", 
+        answerB : "Cascading Style Sheet",
+        answerC : "html",
+        answerD : "C++",
+        correct : "B"
+    },{
+        question : "What phrase is used in nearly all intro tutorials of JavaScript?",
+        answerA : "What is this?",
+        answerB : "My Awesome Code",
+        answerC : "Hello World",
+        answerD : "I am the greatest!",
+        correct : "C"
+    },{
+        question : "Arrays do what in JavaScript?",
+        answerA : "Eliminate objects",
+        answerB : "Connect multiple source code",
+        answerC : "Remove variable partitions to make cleaner code",
+        answerD : "Store multiple values in a single variable",
+        correct : "D"
+    },{ 
+        question : "What does DOM stand for?",
+        answerA : "Dominate Outer Movement",
+        answerB : "Document Order Model",
+        answerC : "Document Object Model",
+        answerD : "Decision Override Model",
+        correct : "C"
+    },{
+        question : "What is a function?",
+        answerA : "A function is code that can be called by other code or by itself",
+        answerB : "A function has conjunctions",
+        answerC : "A function passes variables through to scripts",
+        answerD : "A function represents other values",
+        correct : "A"
+     
+    },{
+        question : "What is the purpose of a loop?",
+        answerA : "A loop extends the code into multiple dimensions",
+        answerB : "A loop increases the number of code blocks a person needs to write",
+        answerC : "A loop eliminates the need to write repetitive code that accomplishes the same purpose",
+        answerD : "A loop contains sugary fruity bits of goodness",
+        correct : "C"
 
-            question : "What does HTML stand for?",
-        
-            
-        
-            choiceA : "Correct",
-        
-            choiceB : "Wrong",
-        
-            choiceC : "Wrong",
+    },{
+        question : "'undefined' tells us what when we run a function?",
+        answerA : "the number is not a real number",
+        answerB : "an absolute value has been declared for a given variable",
+        answerC : "informal arguements have not been declared yet",
+        answerD : "that variables have just been declared",
+        correct : "D"
+    },{
+        question : "Iteration is used in JavaScript for what purpose?",
+        answerA : "It allows the variables to render properly",
+        answerB : "It is a method that allows a for loop to function proplerly",
+        answerC : "It guides the user in what decisions they should make",
+        answerD : "It allows the code to skip a function",
+        correct : "B"
+    },{
+        question : "Javascript is a language that__________",
+        answerA : "is varantly evolving and is essential in web development",
+        answerB : "is outdated and soon to be replaced",
+        answerC : "was created for writing machine language",
+        answerD : "is slow and does not play well with others",
+        correct : "A"
+    }
+];
 
-            choiceD : "Wrong",
-        
-            correct : "A"
-        
-          },{
-        
-            question : "What does CSS stand for?",
-        
-            
-        
-            choiceA : "Wrong",
-        
-            choiceB : "Correct",
-        
-            choiceC : "Wrong",
-        
-            correct : "B"
-        
-          },{
-        
-            question : "What does JS stand for?",
-        
+
            
-        
-            choiceA : "Wrong",
-        
-            choiceB : "Wrong",
-        
-            choiceC : "Correct",
-        
-            correct : "C"
-        
-          }
-        
-        ];
 
 
 var startquiz = function()
