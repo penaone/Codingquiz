@@ -13,4 +13,7 @@ Upon completion of the quiz I ca enter my initials and save the high score using
 
 The code requires using multiple functions and at least 1 for loop.
 
-I needed to work with the DOM to complete this assignment.q
+I needed to work with the DOM to complete this assignment.
+
+Credit: given to tutor and TA's for code assistance.
+        Followed tutorial guide on youtube for code framework Codeexplained.org
