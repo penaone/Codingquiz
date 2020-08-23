@@ -112,7 +112,11 @@ function renderQuestion() {
     answerB.innerHTML = qz.answerB;
     answerC.innerHTML = qz.answerC;
     answerD.innerHTML = qz.answerD;
-    endGame();
+    console.log("Time Left: ", testTime, "\n Is time up? , ",  testTime<= 0)
+     if(testTime<= 0) {
+         endGame();
+         }
+        
 }
 
 start.addEventListener("click", startQuiz);
@@ -189,7 +193,8 @@ function answerIsWrong() {
 }
 
 function endGame() {
-if(testTime<=0)(clearInterval(TIMER))
+(clearInterval(TIMER))
+alert("The quiz is OVER!")
 }
 
 // score render
