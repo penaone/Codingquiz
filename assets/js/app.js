@@ -112,11 +112,11 @@ function renderQuestion() {
     answerB.innerHTML = qz.answerB;
     answerC.innerHTML = qz.answerC;
     answerD.innerHTML = qz.answerD;
-    console.log("Time Left: ", testTime, "\n Is time up? , ",  testTime<= 0)
-     if(testTime<= 0) {
-         endGame();
-         }
-        
+    console.log("Time Left: ", testTime, "\n Is time up? , ", testTime <= 0)
+    if (testTime <= 0) {
+        endGame();
+    }
+
 }
 
 start.addEventListener("click", startQuiz);
@@ -128,7 +128,7 @@ function startQuiz() {
     quiz.style.display = "block";
     renderProgress();
     TIMER = setInterval(renderCounter, 1000);
-    
+
 
 
 }
@@ -142,11 +142,16 @@ function renderProgress() {
 
 // counter render
 
-function renderCounter() {
 
-    counter.innerHTML = testTime;
+
+function renderCounter() {
     testTime--
+    counter.innerHTML = testTime;
+    if (testTime <= 0) {
+        endGame();
+    }
 }
+
 
 function nextQuestion() {
     // answerIsWrong();
@@ -155,9 +160,7 @@ function nextQuestion() {
         renderQuestion();
         console.log(runningQuestion)
     } else {
-        // end the quiz and show the score
-        // clearInterval(TIMER);
-        scoreRender();
+        endGame();
     }
 
 
@@ -174,7 +177,7 @@ function verifyAnswer(answer) {
     } else {
         answerIsWrong();
     }
-    
+
 }
 
 // answer is correct
@@ -193,17 +196,17 @@ function answerIsWrong() {
 }
 
 function endGame() {
-(clearInterval(TIMER))
-alert("The quiz is OVER!")
+    alert("The quiz is OVER!")
+    (clearInterval(TIMER))
+    
+    scoreRender();
 }
 
 // score render
 function scoreRender() {
     scoreDiv.style.display = "block";
-    
-    
 
     // calculate the amo0unt of question percent answered by the user
     var scorePerCent = Math.round(100 * score / quizQuestions.length);
-
+    scoreDiv.textContent = "You scored " + scorePerCent + "%";
 }
