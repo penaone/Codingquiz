@@ -3,6 +3,12 @@ body{
     font-family: monospace;
 }
 
+header{
+    display: inline;
+    text-align: right;
+    font-size: 10px;
+}
+
 #container{
     margin : 20px auto;
     background-color: white;
@@ -25,12 +31,8 @@ body{
     top:50px;
     color : black;
 }
-/* #start:hover{
-    
-    color : lightseagreen;
-} */
 
-#qImg{
+/* #qImg{
     width : 200px;
     height : 200px;
     position: absolute;
@@ -41,7 +43,7 @@ body{
     width : 200px;
     height : 200px;
     border-top-left-radius: 5px;
-}
+} */
 
 #question{
     font-weight: bolder;
@@ -68,7 +70,7 @@ body{
     color : white;
     display: block;
     width : 400px;
-    text-align: center;
+    text-align: left;
     border : 1px solid grey;
     border-radius: 5px;
     cursor: pointer;
@@ -87,11 +89,13 @@ body{
     height : 2px;
     width : 2px;
     bottom : 0px;
-    text-align : left;
+    text-align: right;
     
 }
 #counter{
-    /* font-size: 3em; */
+    display: inline;
+    text-align: right;
+    font-size: 15px;
 }
 #btimeGauge{
     width : 150px;
@@ -145,21 +149,3 @@ body{
     font-weight: bold;
     text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
