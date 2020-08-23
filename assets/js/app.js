@@ -216,16 +216,16 @@ function scoreRender() {
    
 }
 function localScore() {
-var highscore = localStorage.getItem("scorePerCent");
+var highscore = localStorage.getItem("highscore");
 
 if(highscore !== null){
     if (score > highscore) {
-        localStorage.setItem("highscore", score); 
+        localStorage.setItem("highscore", JSON.stringify(score)); 
         console.log(highscore);     
     }
 }
 else{
-    localStorage.setItem("highscore", score);
+    localStorage.setItem("highscore", JSON.stringify(score));
     
 }
 }
